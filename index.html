@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Varenya Cafe &amp; Bakery | 100% Veg Restaurant Menu</title>
+  <meta name="description" content="Varenya Cafe & Bakery - 100% Veg, Pure & Fresh. Chai, pizza, momos, shakes & more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="logo.png" />
+</head>
+<body>
+
+  <!-- ===== TOP BAR ===== -->
+  <header class="topbar" id="top">
+    <div class="wrap topbar-inner">
+      <a href="#top" class="logo">
+        <img class="logo-img" src="logo.png" alt="Varenya Cafe and Bakery logo" onerror="this.remove()" />
+        <span class="logo-text">Varenya <em>Cafe &amp; Bakery</em></span>
+      </a>
+      <nav class="top-links">
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#visit">Visit Us</a>
+      </nav>
+      <div class="top-actions">
+        <span class="open-badge"><span class="dot"></span> Open • 11am – 11pm</span>
+        <button class="cart-btn" id="cartBtn" aria-label="View order">
+          🧾 <span id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero wrap">
+    <div class="hero-text">
+      <span class="pill">🌱 100% VEG • Pure &amp; Fresh</span>
+      <h1>Swad Jo <span class="highlight">Yaad</span> Rahe.</h1>
+      <p>Kadak chai, cheesy pizza, crispy momos, thick shakes — cafe wali saari cravings, ek hi menu mein. Pick your favourite below.</p>
+      <div class="hero-btns">
+        <a href="#menu" class="btn btn-primary">View Full Menu ↓</a>
+        <a href="#visit" class="btn btn-ghost">📍 Find Us</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong id="statItems">60+</strong><span>Dishes</span></div>
+        <div><strong>4.8★</strong><span>Loved by locals</span></div>
+        <div><strong>100%</strong><span>Pure Veg</span></div>
+      </div>
+    </div>
+    <div class="hero-images">
+      <img class="hero-main" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80&auto=format&fit=crop" alt="Fresh pizza" />
+      <img class="hero-small h1" src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500&q=80&auto=format&fit=crop" alt="Shake" loading="lazy" />
+      <img class="hero-small h2" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&q=80&auto=format&fit=crop" alt="Burger" loading="lazy" />
+      <div class="hero-card">🌱 <div><strong>100% Pure Veg</strong><span>Fresh &amp; hygienic, always</span></div></div>
+    </div>
+  </section>
+
+  <!-- ===== CONTROLS ===== -->
+  <section class="controls wrap" id="menu">
+    <h2 class="section-title">Our <span>Menu</span></h2>
+    <p class="section-sub">Search, filter, tap to add — show it at counter to order.</p>
+
+    <div class="search-row">
+      <div class="search-box">
+        <span>🔍</span>
+        <input type="text" id="searchInput" placeholder="Search — try 'momo', 'pizza', 'shake'..." />
+        <button id="clearSearch" hidden>✕</button>
+      </div>
+      <label class="veg-toggle">
+        <input type="checkbox" id="bestOnly" />
+        <span class="switch"></span> Bestsellers
+      </label>
+    </div>
+
+    <div class="cats" id="catBar"><!-- buttons come from menu.js --></div>
+    <p class="result-line" id="resultLine"></p>
+  </section>
+
+  <!-- ===== MENU GRID ===== -->
+  <main class="wrap">
+    <div id="menuSections"></div>
+
+    <div class="empty" id="emptyState" hidden>
+      <div class="empty-emoji">🍲</div>
+      <h3>Nothing found</h3>
+      <p>Try another search or category.</p>
+      <button class="btn btn-primary" id="resetBtn">Show Full Menu</button>
+    </div>
+  </main>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about wrap" id="about">
+    <div class="about-card">
+      <div>
+        <h2>Why <span>Varenya Cafe &amp; Bakery?</span></h2>
+        <p>100% veg cafe &amp; bakery — morning chai se late-night shake tak. Fresh ingredients, family-friendly prices, fast service aur parcel available.</p>
+        <ul class="ticks">
+          <li>✅ 100% Veg — Pure &amp; Fresh</li>
+          <li>✅ Family-friendly prices</li>
+          <li>✅ Fast service, parcel available</li>
+        </ul>
+      </div>
+      <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=700&q=80&auto=format&fit=crop" alt="Cafe interior" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- ===== REEL ===== -->
+  <section class="wrap reel-sec" id="reel">
+    <h2 class="section-title">Watch Us <span>Live</span></h2>
+    <p class="section-sub">Fresh from our kitchen — follow <a href="https://www.instagram.com/varenya_cafe_bakery" target="_blank" rel="noopener">@varenya_cafe_bakery</a> for more.</p>
+    <div class="reel-frame">
+      <video controls playsinline preload="metadata" src="reel/Varenya_Cafe_Bakery_Compressed.mp4" onerror="document.getElementById('reel').style.display='none'"></video>
+    </div>
+    <a class="btn btn-ghost reel-follow" href="https://www.instagram.com/varenya_cafe_bakery" target="_blank" rel="noopener">📸 Follow on Instagram</a>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="visit">
+    <div class="wrap footer-grid">
+      <div>
+        <div class="logo-text light">Varenya <em>Cafe &amp; Bakery</em></div>
+        <p>PAC Gate No. 3 ke samne, Paras Colony,<br>Saifai Road, Kunehra, Etawah (UP)<br>Open Daily: 11:00 AM – 11:00 PM</p>
+        <p class="phone">📞 <a href="tel:+919412705000">+91 94127 05000</a></p>
+        <p class="phone">📸 <a href="https://www.instagram.com/varenya_cafe_bakery" target="_blank" rel="noopener">@varenya_cafe_bakery</a></p>
+      </div>
+      <div>
+        <h4>Quick Bites</h4>
+        <a href="#menu">Full Menu</a>
+        <a href="#menu">Bestsellers</a>
+        <a href="#menu">Combos</a>
+      </div>
+      <div>
+        <h4>Note</h4>
+        <p class="small">100% Veg • Prices inclusive of taxes.<br>Pizza available in Small / Large sizes.</p>
+      </div>
+    </div>
+    <div class="copyright">© 2026 Varenya Cafe &amp; Bakery • Made with ❤️ in Etawah</div>
+  </footer>
+
+  <!-- ===== CART DRAWER ===== -->
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <h3>🧾 Your Order <span id="drawerCount"></span></h3>
+      <button id="closeDrawer">✕</button>
+    </div>
+    <div class="drawer-body" id="drawerBody"></div>
+    <div class="drawer-foot">
+      <div class="total-row"><span>Total</span><strong id="drawerTotal">₹0</strong></div>
+      <p class="hint">Show this screen at the counter to order. No online payment needed.</p>
+      <button class="btn btn-primary full" id="clearCart">Clear Order</button>
+    </div>
+  </aside>
+
+  <script src="menu.js"></script>
+</body>
+</html>

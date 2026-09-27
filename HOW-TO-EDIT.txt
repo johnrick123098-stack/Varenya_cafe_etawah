@@ -1,0 +1,38 @@
+VARENYA CAFE & BAKERY — Menu kaise edit karein (Non-Tech Guide)
+====================================================
+
+1. menu.js file kholo (Notepad mein bhi khul jayegi).
+
+2. Upar likha hai "MENU EDIT KARNE KE LIYE YAHIN BADLO".
+   Bas wahi section chhedna hai. Neeche wala code MAT chhedo.
+
+3. NAYA ITEM ADD karna:
+   - Kisi category ki list mein ye line copy-paste karo:
+     { name: "Item Name", price: 99, desc: "tasty line",
+       image: "photo-link", best: false },
+   - Naam, price, photo badal do. Ho gaya!
+
+4. ITEM HATANA:
+   - Us item wali { ... }, line ko delete kar do.
+
+5. PHOTO BADALNA (3 tarike — jo easy lage):
+   a) Apni photo isi folder mein rakho, jaise "momo.jpg"
+      phir likho:  image: "momo.jpg"
+   b) Internet photo ka link paste kar do.
+   c) Cloudinary: menu.js mein sabse upar CLOUDINARY_CLOUD_NAME
+      mein apna cloud naam likho, phir sirf public_id likho:
+      image: "menu/veg-momo"
+      Photos ki list nikalne ke liye: fetch-images.js dekho
+      (npm install cloudinary dotenv, .env banao, node fetch-images.js).
+
+6. PIZZA (Small / Large 2 price):
+   { name: "Onion Pizza", small: 0, large: 129, desc: "...",
+     image: "photo-link", best: false },
+   Jis size mein item NAHI bikta wahan 0 likh do.
+
+7. Save karo, website refresh karo (F5). Bas!
+
+Tip: price sirf number mein likho — ₹ mat lagao, wo automatic lagega.
+best: true = Bestseller tag dikhega. Sab kuch 100% VEG hai.
+
+Categories ka order badalna ho to CATEGORIES list ka order badal do.
